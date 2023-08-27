@@ -1,0 +1,370 @@
+/* Inter font */
+:root {
+	font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+	:root {
+		font-family: "Inter var", sans-serif;
+	}
+}
+
+/* I. Global Styles */
+body {
+	display: flex;
+	font-size: 0.8rem;
+	font-weight: 600;
+	user-select: none;
+	background-color: #2b2a33;
+}
+
+#container {
+	display: flex;
+	margin: 0 auto;
+}
+
+.hidden {
+	opacity: 0;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+/* II. Category Elements */
+/* 1. Global Category Styles */
+.category {
+	margin-right: 0.3rem; /* Space between each category column */
+}
+
+.rectangle {
+	display: flex;
+	width: 12rem;
+	height: 2rem;
+	margin-bottom: 0.3rem;
+	align-items: center;
+	border-radius: 0.3rem;
+}
+
+.configurable {
+	position: relative;
+}
+
+.icon {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+/* 2. .category-link */
+.category-link {
+	background-color: #42414d;
+}
+
+.link {
+	width: 12rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	border-radius: 0.3rem;
+}
+
+.favicon {
+	height: 1rem;
+	width: 1rem;
+}
+
+.link:not(.favicon):hover {
+	background-color: gray;
+	cursor: pointer;
+}
+
+/* 3. .category-title  */
+.category-title {
+	background-color: #1f1f1f;
+	color: white;
+	justify-content: center;
+}
+
+/* 4. .category-create */
+.category-create {
+	background-color: #1f1f1f;
+	color: white;
+	cursor: pointer;
+}
+
+/* III. Interactive Elements */
+/* 1. Creation Buttons */
+#new-category {
+	display: flex;
+	background-color: #1f1f1f;
+	cursor: pointer;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 0.3rem;
+}
+
+.button:active {
+	box-shadow: inset 0 3px 4px hsla(0, 0%, 0%, 0.2);
+}
+
+.button:hover {
+	box-shadow: 0 1px 2px hsla(0, 2%, 30%, 0.2);
+	opacity: 0.5;
+}
+
+.plus-image {
+	display: flex;
+	filter: invert(100%) brightness(100%);
+}
+
+/* 2. Meatball menu */
+.meatball-menu {
+	position: absolute;
+	transform: rotate(90deg);
+	width: 1rem;
+	height: 1rem;
+	right: 0.5rem;
+	border-radius: 0.3rem;
+}
+
+.meatball-menu:hover {
+	border: 1px solid gray;
+	cursor: pointer;
+	filter: invert(100%) brightness(100%);
+}
+
+/* IV. Global Dialog and Form Elements */
+/* 1. Global Dialog Styles */
+dialog {
+	border-radius: 1rem;
+	background-color: #42414d;
+	padding: 0;
+	border: 0;
+}
+
+dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 2. Global Form Styles */
+form {
+	box-sizing: border-box;
+	padding: 2rem;
+	border-radius: 1rem;
+	border: 0.5px solid rgb(67, 66, 77, 0.5);
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background-color: #42414d;
+	color: white;
+}
+
+/* 3. Link and Category Styles */
+.form-title-container > * {
+	font-size: medium;
+	padding: 0 0 0.5rem 0.1rem;
+}
+
+.user-input {
+	border-top: white 1px solid;
+	border-bottom: white 1px solid;
+}
+
+.user-input > * {
+	display: flex;
+}
+
+input[type="text"] {
+	background-color: #cccccc;
+	border-radius: 3px;
+	border: 0.3px white solid;
+	padding-left: 0.3rem;
+	height: 1rem;
+	width: 12rem;
+}
+
+input[type="file"]:hover {
+	pointer-events: none;
+}
+
+.user-action {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.user-action > * {
+	margin-top: 1rem;
+	width: 4rem;
+	height: 1.3rem;
+	border-radius: 0.3rem;
+	font-family: "Inter", sans-serif;
+	font-weight: 600;
+	border: none;
+	margin-right: 0.3rem;
+	background-color: #1f1f1f;
+	color: white;
+	cursor: pointer;
+}
+
+.user-action > *:hover {
+	opacity: 0.8;
+}
+
+/* V. Form Specific Elements */
+/* 1. Link Form */
+#form-link {
+	width: 30rem;
+}
+
+#form-link > .user-input {
+	display: flex;
+	justify-content: space-around;
+}
+
+#form-link > .user-input > * {
+	flex-direction: column;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.text-input > * {
+	margin-bottom: 0.5rem;
+}
+
+.image-input {
+	align-items: center;
+	position: relative;
+}
+
+.image-input > .image-container,
+.image-input > .upload-image-name {
+	margin-bottom: 0.5rem;
+}
+
+.image-container {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 0.3rem;
+	background-color: #42414d;
+	border: 1px solid #cccccc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.preview {
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.preview:not([src]) {
+	/* Hides the border when no src */
+	width: 0;
+	height: 0;
+}
+
+.upload-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: 11rem;
+}
+
+.upload-container:hover {
+	opacity: 0.8;
+}
+
+.upload-container > *:not(.tooltip) {
+	width: 8rem;
+	height: 1.3rem;
+	display: flex;
+	border-radius: 0.3rem;
+}
+
+.upload-container > label {
+	background-color: #1f1f1f;
+	align-items: center;
+	justify-content: center;
+}
+
+.upload-container > input {
+	opacity: 0;
+	position: absolute;
+	font-size: 0;
+	cursor: pointer;
+}
+
+.upload-image-name {
+	height: 1rem;
+}
+
+/* 2. Category Form */
+#form-category > .user-input {
+	padding-top: 1.3rem;
+	padding-bottom: 1.3rem;
+}
+
+#form-category > .user-input > *:first-child {
+	margin-bottom: 0.5rem;
+}
+
+/* 3. Prompt Form */
+#prompt-message {
+	margin-left: 1rem;
+}
+
+.form-message-container {
+	display: flex;
+	align-items: center;
+}
+
+/* III. JavaScript created elements */
+/* 1. Dragged Element */
+.dragging {
+	opacity: 80%;
+	cursor: pointer;
+}
+
+/* 2. Context Menu */
+.context-menu {
+	background-color: white;
+	position: absolute;
+	z-index: 1;
+	border: 1px black solid;
+	width: max-content;
+	color: black;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	border-radius: 0.3rem;
+}
+
+.context-menu > * {
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+}
+
+.context-menu > *:hover,
+.context-menu > *:active {
+	background-color: gray;
+	cursor: pointer;
+}
+
+/* 3. Tooltip */
+.tooltip {
+	position: absolute;
+	display: flex;
+	z-index: 1;
+	flex-direction: row;
+	border: 0.1rem black solid;
+	border-radius: 0.3rem;
+	padding: 0.3rem;
+	background-color: red;
+	color: white;
+	margin-top: 0.3rem;
+	width: max-content;
+	max-width: 12rem;
+}
+
+.tooltip > *:first-child {
+	margin-right: 1rem;
+}

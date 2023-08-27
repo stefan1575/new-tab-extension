@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="" type="image/x-icon" />
+		<link rel="stylesheet" href="styles.css" type="text/css" />
+		<link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" />
+		<script src="scripts/link-methods.js" defer></script>
+		<script src="scripts/category-methods.js" defer></script>
+		<script src="scripts/prompt.js" defer></script>
+		<script src="scripts/context-menu.js" defer></script>
+		<script src="scripts/tab-state.js"></script>
+		<title>New Tab</title>
+		<!-- Inter font -->
+		<link rel="preconnect" href="https://rsms.me/" />
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+	</head>
+	<body>
+		<div id="container" class="hidden">
+			<div id="new-category-container">
+				<div class="button" id="new-category">
+					<img class="plus-image" src="assets/plus.svg" />
+				</div>
+			</div>
+		</div>
+		<!-- Link Dialog -->
+		<dialog id="dialog-link">
+			<div class="form-container">
+				<form id="form-link">
+					<div class="form-title-container">
+						<div id="link-action"></div>
+					</div>
+					<div class="user-input">
+						<div class="text-input">
+							<label for="name">Name: </label><input type="text" name="name" />
+							<label for="url">URL: </label><input type="text" name="url" />
+						</div>
+						<div class="image-input">
+							<div class="image-container">
+								<img class="preview" />
+							</div>
+							<div class="upload-image-name"></div>
+							<div class="upload-container">
+								<label for="upload">Upload Image</label>
+								<input
+									id="change-icon"
+									type="file"
+									name="upload"
+									accept=".png, .jpg, .jpeg"
+								/>
+							</div>
+						</div>
+					</div>
+					<div class="user-action">
+						<input type="submit" value="Ok" name="ok" />
+						<input type="button" value="Cancel" name="cancel" />
+					</div>
+				</form>
+			</div>
+		</dialog>
+		<!-- Category Dialog -->
+		<dialog id="dialog-category">
+			<div class="form-container">
+				<form id="form-category">
+					<div class="form-title-container">
+						<div id="category-action"></div>
+					</div>
+					<div class="user-input">
+						<label for="title">Category Title: </label>
+						<input type="text" name="title" />
+					</div>
+					<div class="user-action">
+						<input type="submit" value="Ok" name="ok" />
+						<input type="button" value="Cancel" name="cancel" />
+					</div>
+				</form>
+			</div>
+		</dialog>
+		<!-- Prompt Dialog -->
+		<dialog id="dialog-prompt">
+			<div class="form-container">
+				<form id="form-prompt">
+					<div class="form-message-container">
+						<img src="assets/trash.svg" />
+						<div id="prompt-message"></div>
+					</div>
+					<div class="user-action">
+						<input type="submit" value="Yes" name="yes" />
+						<input type="button" value="No" name="no" />
+					</div>
+				</form>
+			</div>
+		</dialog>
+		<!-- Link Creation Template -->
+		<template id="link-template">
+			<div class="category-link rectangle configurable">
+				<a href="" class="link">
+					<img class="favicon icon" />
+					<div class="link-text"></div>
+				</a>
+				<img
+					class="meatball-menu-link meatball-menu"
+					src="assets/kebab-horizontal.svg"
+				/>
+			</div>
+		</template>
+		<!-- Title Creation Template -->
+		<template id="title-template">
+			<div class="category">
+				<div class="category-title rectangle configurable">
+					<div class="title"></div>
+					<img
+						class="meatball-menu-title meatball-menu"
+						src="assets/kebab-horizontal.svg"
+					/>
+				</div>
+				<div class="category-create rectangle button">
+					<div class="plus icon">
+						<img class="plus-image" src="assets/plus.svg" />
+					</div>
+					<div>Add New Link</div>
+				</div>
+			</div>
+		</template>
+		<!-- Context Menu Templates -->
+		<template id="link-context-menu">
+			<div class="context-menu">
+				<div class="edit-link">Edit</div>
+				<div class="new-tab">Open in New Tab</div>
+				<div class="new-window">Open in New Window</div>
+				<div class="remove">Remove</div>
+			</div>
+		</template>
+		<template id="title-context-menu">
+			<div class="context-menu">
+				<div class="edit-title">Edit</div>
+				<div class="remove">Remove</div>
+			</div>
+		</template>
+		<!-- Tooltip Template -->
+		<template id="error-tooltip">
+			<div class="tooltip">
+				<img class="warning" src="assets/alert.svg" />
+				<div class="tooltip-text"></div>
+			</div>
+		</template>
+	</body>
+</html>

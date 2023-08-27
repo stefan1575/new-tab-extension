@@ -1,0 +1,20 @@
+{
+	"manifest_version": 2,
+	"name": "New Tab Extension",
+	"version": "1.0",
+	"description": "Overrides the default new tab with compact links and an organizable structure.",
+	"homepage_url": "https://github.com/stefan1575/new-tab-extension",
+
+	"chrome_url_overrides": {
+		"newtab": "index.html"
+	},
+
+	"icons": {
+		"16": "assets/favicon.svg",
+		"48": "assets/favicon.svg",
+		"96": "assets/favicon.svg",
+		"128": "assets/favicon.svg"
+	},
+
+	"permissions": ["tabs", "storage"]
+}
